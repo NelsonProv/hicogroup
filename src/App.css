@@ -1,0 +1,263 @@
+.App {
+  text-align: center;
+}
+
+
+
+.abovetable-items{
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  align-items: center;
+}
+.abovebutton {
+  margin-left: 5px;
+  background-color: #0f0f0f;
+  width: 250px;
+  color: white;
+  height: 50px;
+  border-radius: 8px;
+  cursor: pointer;
+
+}
+.span-text {
+padding-left: 750px;
+font-weight: 800;
+}
+
+.close-details{
+  text-align: left;
+  cursor: pointer;
+  font-weight: 800;
+  margin-left: 40px;
+  
+}
+.close-details:hover{
+  color: rgb(255, 4, 0);
+}
+.delete-details {
+  text-align: center;
+  cursor: pointer;
+  font-weight: 800;
+  margin-left: 40px;
+  transition: transform 0.3s ease; 
+}
+.delete-details:hover{
+  color: rgba(228, 228, 12, 0.745);
+  transform: scale(0.9); 
+}
+
+
+
+
+/* //Table Styling */
+.table-section {
+  width: 100%;
+  text-align: center;
+  padding: 50px 3%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 90%;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+th {
+  background-color: #f2f2f2;
+}
+
+/* Default style for selected row */
+.selected-row {
+  background-color: #817a7a; 
+}
+
+/* Additional styles for specific profile colors */
+.selected-row[data-profilecolor="Green"] {
+  background-color: Green;
+}
+
+.selected-row[data-profilecolor="Blue"] {
+  background-color: Blue;
+}
+
+.selected-row[data-profilecolor="Red"] {
+  background-color: Red;
+}
+
+/* Ends Here */
+
+
+
+
+.employee-details {
+  width: 90%;
+  background-color: #ffffff;
+  border-color: #0f0f0f;
+  border-style:outset;
+  height: 400px;
+  margin-top: 50px;
+  padding: 20px;
+}
+
+.savecancel-buttons {
+  text-align: right;
+  margin-right: 450px;
+  margin-bottom: 40px;
+}
+
+.save-only {
+  width: 80px;
+  margin-left: 10px;
+  color: #ffffff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.cancel-only {
+  width: 80px;
+  margin-left: 10px;
+  color: #050404;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.detailsinput-group {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+  margin-left: 20px;
+  align-items: flex-start; 
+}
+
+.input1 {
+  margin-left: 39px;
+  width: 450px;
+
+}
+.input2 {
+  margin-left: 68px;
+  width: 450px;
+
+}
+.input3 {
+  margin-left: 77px;
+  width: 450px;
+
+}
+.input-empid {
+  margin-left: 48px;
+  width: 450px;
+}
+.gendermale-details{
+  margin-left: 87px;
+}
+.genderfemale-details{
+  margin-left: 300px;
+
+}
+.genderunspec-details {
+
+
+}
+
+.main-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .grouptwo {
+  display: flex;
+  width: 50%;
+  background-color: #bd1384;
+  flex-direction: column;
+  margin-left: 1120px;
+  align-items: flex-start;
+  margin-top: -120px;
+ 
+} */
+.input1fullname {
+  margin-left: 75px;
+  width: 450px;
+
+}
+
+
+/* Modal Styling */
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  width: 50%;
+  text-align: left;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.modal-label {
+  margin-bottom: 8px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 16px;
+  box-sizing: border-box;
+ 
+}
+
+.modal-button {
+  width: 50%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+ 
+}
+.modal-button2 {
+  width: 50%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: 10px;
+ 
+}
+
+.modal-button:hover {
+  background-color: #45a049;
+}
+.modal-groupbuttons {
+  display: flex;
+  padding: 20px 10%;
+}
+
+
+
+
