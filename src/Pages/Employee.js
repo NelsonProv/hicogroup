@@ -26,7 +26,7 @@ const Employee = () => {
   // API Calls Methods
   useEffect(() => {
     axios
-      .get("http://localhost:8081/api/employees") // Correct endpoint
+      .get("http://localhost:8081/api/employees")
       .then((res) => setData(res.data))
       .catch((err) => console.log(err));
   }, []);
@@ -35,7 +35,6 @@ const Employee = () => {
 
   const handleSaveEdit = async () => {
     try {
-      // Perform the update request to your API with editedData
       const response = await axios.put(
         `http://localhost:8081/api/updateemployee/${selectedEmployee.EmployeeID}`,
         editedData,
@@ -47,7 +46,6 @@ const Employee = () => {
       );
 
       if (response.status === 200) {
-        // Update the local data with the edited data
         const updatedData = data.map((employee) =>
           employee.EmployeeID === selectedEmployee.EmployeeID
             ? editedData
