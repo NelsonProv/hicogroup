@@ -46,8 +46,8 @@ const Modal = ({ closeModal, updateData }) =>  {
     
             // Fetch updated employee data
             axios
-              .get("http://localhost:8081/api/employees") // Replace with your correct endpoint
-              .then((res) => updateData(res.data)) // Use updateData function
+              .get("http://localhost:8081/api/employees")
+              .then((res) => updateData(res.data))
         .catch((err) => console.log(err));
           } else {
             console.error("Failed to add employee");
