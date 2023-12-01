@@ -22,29 +22,29 @@ This Employee Management System allows users to manage employee information, inc
 last name, salutation, gender, gross salary, and profile colors. The system exposes RESTful APIs to interact with the employee data.
 
 Features
-Add new employees
-Retrieve a list of all employees
-Update employee information
-Prerequisites
-Before you begin, ensure you have the following installed:
+- Add new employees
+- Retrieve a list of all employees
+- Update employee information
+- Prerequisites
+- Before you begin, ensure you have the following installed:
 
-Node.js
-npm
-MySQL Database
+- Node.js
+- npm
+- MySQL Database
 
 
 Getting Started
-Installation
-Clone the repository:
+- Installation
+- Clone the repository:
 
 
 git clone https://github.com/NelsonProv/peanut-app-dev.git
 
-Navigate to the project directory:
+- Navigate to the project directory:
 
 
-cd payroll_system
-Install dependencies:
+- cd payroll_system
+- Install dependencies:
 
 
 npm install
