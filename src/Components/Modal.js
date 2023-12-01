@@ -172,7 +172,7 @@ const Modal = ({ closeModal, updateData }) =>  {
                 Gross Salary $PY
                 <input
                   className="modal-input"
-                  type="text"
+                  type="number"
                   name="GrossSalary"
                   value={formData.GrossSalary}
                   onChange={handleModalInputChange}

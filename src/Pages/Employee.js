@@ -369,7 +369,7 @@ const Employee = () => {
                     type="text"
                     value={
                       isEdit
-                        ? editedData.GrossSalary
+                        ? editedData.GrossSalary.toLocaleString()
                         : selectedEmployee.GrossSalary.toLocaleString()
                     }
                     onChange={handleFormInputChange}
