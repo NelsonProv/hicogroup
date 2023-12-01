@@ -47,24 +47,24 @@ git clone https://github.com/NelsonProv/peanut-app-dev.git
 - Install dependencies:
 
 
-npm install
-Usage
-Start the server:
+- npm install
+- Usage
+- Start the server:
 
 
-node server.js
-Access the API at http://localhost:8081.
+- node server.js
+- Access the API at http://localhost:8081.
 
-API Endpoints
-POST /api/addemployees: Add a new employee.
-GET /api/employees: Retrieve a list of all employees.
-PUT /api/updateemployee/:id: Update employee information by providing the employee ID.
+- API Endpoints
+- POST /api/addemployees: Add a new employee.
+- GET /api/employees: Retrieve a list of all employees.
+- PUT /api/updateemployee/:id: Update employee information by providing the employee ID.
 
 Technologies Used
-Node.js
-Express.js
-MySQL
-Axios (for making HTTP requests)
+- Node.js
+- Express.js
+- MySQL
+- Axios (for making HTTP requests)
 
 
 
