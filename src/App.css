@@ -18,10 +18,14 @@
   height: 50px;
   border-radius: 8px;
   cursor: pointer;
+}
 
+.abovebutton:hover{
+  color: rgb(5, 5, 5);
+  background-color: burlywood;
 }
 .span-text {
-padding-left: 750px;
+padding-left: 50px;
 font-weight: 800;
 }
 
@@ -257,7 +261,13 @@ th {
   display: flex;
   padding: 20px 10%;
 }
+.stats-modal{
+  width: 90%;
+}
 
+.notification {
+  background-color: #45a049;
+}
 
 
 

@@ -4,6 +4,7 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTimes, faTrash } from "@fortawesome/free-solid-svg-icons";
 import Modal from "../Components/Modal";
+import StatsModal from "../Components/StatsModal";
 
 
 const Employee = () => {
@@ -13,14 +14,7 @@ const Employee = () => {
   const [selectedEmployee, setSelectedEmployee] = useState(null);
   const [selectedRowIndex, setSelectedRowIndex] = useState(null);
   const [isModalOpen, setModalOpen] = useState(false);
-  const [formData, setFormData] = useState({
-    FirstName: "",
-    LastName: "",
-    Salutation: "",
-    Gender: "",
-    GrossSalary: "",
-    ProfileColors: [],
-  });
+  const [isStatsModalOpen, setStatsModalOpen] = useState(false);
   const [data, setData] = useState([]); // Initialize data state
 
   // API Calls Methods
@@ -103,6 +97,22 @@ const Employee = () => {
   const closeModal = () => {
     setModalOpen(false);
   };
+  const openStatsModal = () => {
+    setStatsModalOpen(true);
+  };
+
+  const closeStatsModal = () => {
+    setStatsModalOpen(false);
+  };
+
+  const toggleStatsModal = () => {
+    if (isStatsModalOpen) {
+      closeStatsModal();
+    } else {
+      openStatsModal();
+    }
+  };
+  
   const handleFormInputChange = (event) => {
     const { name, value, type, checked } = event.target;
 
@@ -168,12 +178,24 @@ const Employee = () => {
 
   return (
     <div className="table-section">
-      <div className="abovetable-items">
-        <span className="span-text">Current Employees</span>
-        <button className="abovebutton" onClick={openModal}>
-          Add Employee
-        </button>
-      </div>
+    <div className="abovetable-items">
+    <button className="abovebutton" onClick={toggleStatsModal}>
+        {isStatsModalOpen ? "Close Stats" : "Show Employee Stats"}
+      </button>
+      <span className="span-text">Current Employees</span>
+      <button className="abovebutton" onClick={openModal}>
+        Add Employee
+      </button>
+    </div>
+
+    {isStatsModalOpen && (
+      <StatsModal employees={data} onClose={closeStatsModal} />
+    )}
+    
+
+      {/* //Employee Data Table */}
+    
+      
       {/* //Employee Data Table */}
       <table>
         <thead>
