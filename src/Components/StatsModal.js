@@ -2,6 +2,25 @@ import { useEffect, useRef } from 'react';
 import { Chart } from 'chart.js/auto';
 
 const StatsModal = ({ employees, onClose }) => {
+
+      // Function to calculate employee stats
+  const calculateStats = (employees) => {
+    const maleCount = employees.filter((employee) => employee.Gender === 'Male').length;
+    const femaleCount = employees.filter((employee) => employee.Gender === 'Female').length;
+    const greenCount = countColorOccurrences(employees, 'Green');
+    const blueCount = countColorOccurrences(employees, 'Blue');
+    const redCount = countColorOccurrences(employees, 'Red');
+    const defaultCount = countColorOccurrences(employees, 'Default');
+
+    return [maleCount, femaleCount, greenCount, blueCount, redCount, defaultCount];
+  };
+
+  // Function to count occurrences of a specific color in employee profiles
+  const countColorOccurrences = (employees, color) => {
+    return employees.reduce((count, employee) => {
+      return count + (employee.ProfileColors.includes(color) ? 1 : 0);
+    }, 0);
+  };
   const chartRef = useRef(null);
 
   useEffect(() => {
@@ -64,24 +83,7 @@ const StatsModal = ({ employees, onClose }) => {
     };
   }, [employees]); 
 
-  // Function to calculate employee stats
-  const calculateStats = (employees) => {
-    const maleCount = employees.filter((employee) => employee.Gender === 'Male').length;
-    const femaleCount = employees.filter((employee) => employee.Gender === 'Female').length;
-    const greenCount = countColorOccurrences(employees, 'Green');
-    const blueCount = countColorOccurrences(employees, 'Blue');
-    const redCount = countColorOccurrences(employees, 'Red');
-    const defaultCount = countColorOccurrences(employees, 'Default');
 
-    return [maleCount, femaleCount, greenCount, blueCount, redCount, defaultCount];
-  };
-
-  // Function to count occurrences of a specific color in employee profiles
-  const countColorOccurrences = (employees, color) => {
-    return employees.reduce((count, employee) => {
-      return count + (employee.ProfileColors.includes(color) ? 1 : 0);
-    }, 0);
-  };
 
   return (
     <div className="stats-modal">
