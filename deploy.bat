@@ -1,6 +1,3 @@
-REM Build your React application
-npm run build
-
 REM Copy the built files to the NGINX html folder
 xcopy /S /Y build\* C:\nginx-1.24.0\html
 
