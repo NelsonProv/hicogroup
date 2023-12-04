@@ -182,7 +182,7 @@ const Employee = () => {
     <button className="abovebutton" onClick={toggleStatsModal}>
         {isStatsModalOpen ? "Close Stats" : "Show Employee Stats"}
       </button>
-      <span className="span-text">Current Employees Test</span>
+      <span className="span-text">Current Employees Details Payroll</span>
       <button className="abovebutton" onClick={openModal}>
         Add Employee
       </button>
