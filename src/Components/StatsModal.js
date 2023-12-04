@@ -1,10 +1,8 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import { Chart } from 'chart.js/auto';
 
 const StatsModal = ({ employees, onClose }) => {
-
-      // Function to calculate employee stats
-  const calculateStats = (employees) => {
+  const calculateStats = useCallback((employees) => {
     const maleCount = employees.filter((employee) => employee.Gender === 'Male').length;
     const femaleCount = employees.filter((employee) => employee.Gender === 'Female').length;
     const greenCount = countColorOccurrences(employees, 'Green');
@@ -13,24 +11,21 @@ const StatsModal = ({ employees, onClose }) => {
     const defaultCount = countColorOccurrences(employees, 'Default');
 
     return [maleCount, femaleCount, greenCount, blueCount, redCount, defaultCount];
-  };
+  }, []);
 
-  // Function to count occurrences of a specific color in employee profiles
   const countColorOccurrences = (employees, color) => {
     return employees.reduce((count, employee) => {
       return count + (employee.ProfileColors.includes(color) ? 1 : 0);
     }, 0);
   };
+
   const chartRef = useRef(null);
 
   useEffect(() => {
-    // Create or update the chart
     if (chartRef.current) {
-      // Destroy the previous chart instance
       chartRef.current.destroy();
     }
 
-    // Create a new chart instance
     chartRef.current = new Chart(document.getElementById('myChart'), {
       type: 'bar',
       data: {
@@ -47,8 +42,6 @@ const StatsModal = ({ employees, onClose }) => {
               'rgba(255, 99, 132, 0.8)',
               'rgba(128, 128, 128, 0.5)',
             ],
-            
-
             borderColor: [
               'rgba(54, 162, 235, 1)',
               'rgba(255, 99, 132, 1)',
@@ -62,8 +55,8 @@ const StatsModal = ({ employees, onClose }) => {
         ],
       },
       options: {
-        maintainAspectRatio: false, // Disable aspect ratio to allow chart size customization
-        responsive: true, // Make the chart responsive
+        maintainAspectRatio: false,
+        responsive: true,
         scales: {
           x: {
             beginAtZero: true,
@@ -76,18 +69,14 @@ const StatsModal = ({ employees, onClose }) => {
     });
 
     return () => {
-      // Cleanup: destroy the chart when the component is unmounted
       if (chartRef.current) {
         chartRef.current.destroy();
       }
     };
-  }, [employees]); 
-
-
+  }, [employees, calculateStats]);
 
   return (
     <div className="stats-modal">
-        
       <canvas id="myChart" width="200" height="300"></canvas>
     </div>
   );
