@@ -1,8 +1,4 @@
-REM Navigate to the React app directory
-cd C:\Users\Nelson Ndimba\Desktop\react-projec-hico\payroll_system\FrontEnd
-
-REM Install dependencies and build your React application
-npm install
+REM Build your React application
 npm run build
 
 REM Copy the built files to the NGINX html folder
